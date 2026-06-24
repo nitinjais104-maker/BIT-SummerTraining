@@ -1,54 +1,62 @@
 # Question 1: Create and Write a File
 
-with open("student.txt", "w") as f:
-    f.write("Name: Priyanshu\n")
-    f.write("Age: 19\n")
-    f.write("College: BIT\n")
+with open("student.txt", "w") as file:
+    file.write("Name: Rahul\n")
+    file.write("Age: 20\n")
+    file.write("College: BIT\n")
+
 print("File created successfully")
+
 
 # Question 2: Read a File
 
-with open("student.txt", "r") as f:
-    content = f.read()
-print(content)
+with open("student.txt", "r") as file:
+    print(file.read())
+
 
 # Question 3: Append to a File
 
-with open("student.txt", "a") as f:
-    f.write("Course: Python Data AI\n")
-    f.write("City: Lucknow\n")
+with open("student.txt", "a") as file:
+    file.write("Course: Python Data AI\n")
+    file.write("City: Gorakhpur\n")
 
-with open("student.txt", "r") as f:
-    updated_content = f.read()
-print(updated_content)
+with open("student.txt", "r") as file:
+    print(file.read())
+
 
 # Question 4: Count Lines in a File
 
-with open("student.txt", "r") as f:
-    lines = f.readlines()
-print(f"Total lines: {len(lines)}")
+with open("student.txt", "r") as file:
+    lines = file.readlines()
+
+print("Total lines:", len(lines))
+
 
 # Question 5: Write Multiple Students
 
-students = ["Rohit", "Sneha", "Kavya", "Manish", "Vikram"]
-with open("students.txt", "w") as f:
-    for name in students:
-        f.write(name + "\n")
+with open("students.txt", "w") as file:
+    file.write("Aman\n")
+    file.write("Priya\n")
+    file.write("Shalu\n")
+    file.write("Raj\n")
+    file.write("Ansh\n")
 
-with open("students.txt", "r") as f:
-    for line in f:
-        print(line.strip())
+with open("students.txt", "r") as file:
+    print(file.read())
+
 
 # Question 6: Search a Name in File
 
-search_name = input("Enter a student name: ")
-with open("students.txt", "r") as f:
-    all_names = f.read().splitlines()
+name = input("Enter student name: ")
 
-if search_name in all_names:
+with open("students.txt", "r") as file:
+    students = file.read().splitlines()
+
+if name in students:
     print("Found")
 else:
     print("Not Found")
+
 
 # Question 7: Copy File Content
 
@@ -60,16 +68,17 @@ with open("students_backup.txt", "w") as backup:
 
 print("Backup created successfully")
 
+
 # Question 8: Marks File Summary
-marks_list = [85, 90, 78, 92, 88]
-with open("marks.txt", "w") as f:
-    for mark in marks_list:
-        f.write(str(mark) + "\n")
 
-with open("marks.txt", "r") as f:
-    marks = [int(line.strip()) for line in f.readlines()]
+with open("marks.txt", "w") as file:
+    file.write("85\n90\n78\n92\n88\n")
 
-total_marks = sum(marks)
-average_marks = total_marks / len(marks)
-print(f"Total marks: {total_marks}")
-print(f"Average marks: {average_marks}")
+with open("marks.txt", "r") as file:
+    marks = [int(line.strip()) for line in file]
+
+total = sum(marks)
+average = total / len(marks)
+
+print("Total marks:", total)
+print("Average marks:", average)
