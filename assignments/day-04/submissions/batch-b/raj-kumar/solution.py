@@ -1,10 +1,11 @@
 ## Basic Questions
 
 # Question 1: List Append
-students = ['Aman', 'Priya', 'Shalu', 'Rahul', 'Ansh']
-students.append('Raj')
+students = ['Aman', 'Priya', 'Shalu', 'Raj', 'Ansh']
+students.append('Vivek')
 print(students)
-
+# Expected Output:
+# ['Aman', 'Priya', 'Shalu', 'Raj', 'Ansh', 'Vivek']
 
 # Question 2: Tuple Indexing
 cities = ('Gorakhpur', 'Lucknow', 'Delhi', 'Mumbai', 'Patna')
