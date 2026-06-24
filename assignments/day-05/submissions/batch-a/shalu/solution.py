@@ -48,7 +48,7 @@ print("="*45)
 
 with open("student.txt","r") as file:
     content = file.readlines()   
-print(len(content))
+print("Total lines:",len(content))
 print("="*45)
 
 ### Question 5: Write Multiple Students
@@ -78,14 +78,17 @@ print("="*45)
 #
 # Expected Output:
 # Found
-with open ("students.txt","w") as file:
-    file.write(input("Enter the name\n"))
+name=input("enter the name ")
+found=False
 with open("students.txt","r")as file:
     for line in file:
-        if line=="Priya":
-            print("Found")
-        else:
-            print("Not Found")
+        if line.strip()==name:
+            found=True
+            break
+if found==True:
+    print("Found")
+else:
+    print("not found")
 print("="*45)
 ### Question 7: Copy File Content
 
@@ -120,7 +123,7 @@ for mark in data:
 total_marks=sum(marks)
 average_marks=total_marks/len(marks)
 
-print("Total Marks :",total_marks)
-print("Average Marks :",average_marks)
+print("Total marks:",total_marks)
+print("Average marks:",average_marks)
 print("="*45)
 
