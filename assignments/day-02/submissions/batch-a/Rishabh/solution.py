@@ -1,6 +1,6 @@
 # Question 1: Check whether a number is positive, negative, or zero
 
-number = 10
+number = int(input("Enter a number: "))
 
 if number > 0:
     print("Positive")
@@ -12,42 +12,46 @@ else:
 
 # Question 2: Check whether a number is even or odd
 
+number = int(input("Enter another number: "))
+
 if number % 2 == 0:
     print("Even")
 else:
     print("Odd")
 
 
-# Question 3: Create a list of 10 numbers and print each number using a loop
+# Question 3: Print a list of 10 numbers using a loop
 
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-print("\nNumbers in the list:")
+print("List of numbers:")
 for num in numbers:
     print(num)
 
 
-# Question 4: Function to calculate average of 3 marks
+# Question 4: Function to calculate average
 
 def calculate_average(mark1, mark2, mark3):
     return (mark1 + mark2 + mark3) / 3
 
 
 average = calculate_average(80, 90, 85)
-print("\nAverage Marks:", average)
+print("Average:", average)
 
 
-# Question 5: Function to print grade based on marks
+# Question 5: Function to print grade
 
 def grade_student(marks):
     if marks >= 90:
-        print("Grade A")
+        print("Grade: A")
     elif marks >= 75:
-        print("Grade B")
+        print("Grade: B")
     elif marks >= 60:
-        print("Grade C")
+        print("Grade: C")
+    elif marks >= 40:
+        print("Grade: D")
     else:
-        print("Grade D")
+        print("Grade: F")
 
 
 grade_student(average)
