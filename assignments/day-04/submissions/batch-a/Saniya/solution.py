@@ -2,8 +2,8 @@
 #==========================================================>>>
 ### Question 1: List Append
 #.Create a list of 5 student names. Add one new student name to the list and print the final list.
-student_names = ["Aliya", "Shalu", "Ansh", "Aman", "Niya"]
-new_student = "Saniya"
+student_names = ["Priya", "Shalu", "Ansh", "Aman", "Raj"]
+new_student = "Vivek"
 student_names.append(new_student)
 print("Updated list of student names:")
 print(student_names)                                                   # Adding a new student name to the list and printing the updated list    
@@ -17,7 +17,7 @@ print("="*50)                                                              # Cre
 #==========================================================>>>                                                  
 ### Question 3: Set Add
 #.Create a set of 4 course names. Add `"AI"` to the set and print the sorted list of courses.
-course_names = {"Data Science", "Machine Learning", "Artificial Intelligence", "Python Programming"}
+course_names = {"Data Analytics", "Machine Learning", "Python","SQL"}
 course_names.add("AI")
 print("Updated set of course names (sorted):")
 print(sorted(course_names))                                           # Creating a set of course names, adding "AI" to the set and printing the sorted list of courses
@@ -26,8 +26,8 @@ print("="*50)
 ### Question 4: Dictionary Access
 #.Create a dictionary with keys `name`, `course`, `batch`, and `city`. Print the student's name and course.
 student_info = {
-    "name": "Saniya Parveen",
-    "course": "Data Science",
+    "name": "Rahul",
+    "course": "Python Data AI",
     "batch": "A",
     "city": "Gorakhpur"
 }
