@@ -1,0 +1,49 @@
+name: Validate assignment pull request
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  assignment-structure:
+    name: assignment-structure
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the trusted validator
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          path: trusted-validator
+
+      - name: Collect changed paths
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          gh api --paginate \
+            "repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}/files?per_page=100" \
+            --jq '.[].filename' > "${RUNNER_TEMP}/changed-files.txt"
+
+      - name: Validate assignment structure
+        run: |
+          python3 trusted-validator/scripts/validate_assignment_pr.py \
+            --paths-file "${RUNNER_TEMP}/changed-files.txt"
+
+      - name: Check out the proposed submission
+        uses: actions/checkout@v4
+        with:
+          path: submission
+
+      - name: Compile Python solutions without executing them
+        run: |
+          while IFS= read -r solution; do
+            case "${solution}" in
+              */solution.py)
+                python3 -m py_compile "submission/${solution}"
+                ;;
+            esac
+          done < "${RUNNER_TEMP}/changed-files.txt"

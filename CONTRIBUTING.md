@@ -50,13 +50,24 @@ Do not create a Day 12 branch from your Day 11 branch. That can cause old files 
 
 ## 3. Create Only Your Submission Files
 
-Choose your batch and create one folder using your own name.
+Use the submission helper from the repository root. It creates the correct
+folder and `solution.py` without overwriting existing work:
+
+```bash
+python3 scripts/create_submission.py --day 6 --batch a --name your-name
+```
+
+Change the day, batch, and name to match your assignment. Use the same student
+folder spelling you used for earlier assignments. Names cannot contain spaces;
+use `rahul-singh` or `rahul_singh` instead.
+
+The command creates:
 
 ```txt
 assignments/day-06/submissions/batch-a/your-name/solution.py
 ```
 
-or
+For Batch B, use `--batch b`:
 
 ```txt
 assignments/day-06/submissions/batch-b/your-name/solution.py
@@ -74,6 +85,15 @@ Most assignments need only `solution.py`. If an assignment specifically asks for
 assignments/day-07/submissions/batch-a/rahul/solution.py
 assignments/day-07/submissions/batch-a/rahul/sales_data.csv
 ```
+
+The helper prints every additional required filename:
+
+- Day 7 requires `sales_data.csv`.
+- Day 10 requires the five chart images listed in `assignments/day-10/questions.md`.
+- Day 11 requires the six chart images listed in `assignments/day-11/questions.md`.
+
+Do not rename `solution.py`, add a space before `.py`, or place the file
+directly inside `batch-a` or `batch-b`.
 
 ## 4. Run Your Program
 
@@ -124,12 +144,18 @@ git status --short
 
 The output should show only files inside your own submission folder for one assignment day.
 
+GitHub automatically runs the `assignment-structure` check after the Pull
+Request is created. The check must pass before the assignment can be merged.
+If it fails, open the check details: the message lists the missing, unexpected,
+or incorrectly located files.
+
 Do not include:
 
 - Another student's folder or solution file.
 - Files from an earlier or later assignment day.
 - `README.md`, `CONTRIBUTING.md`, `.gitignore`, or `questions.md`.
 - `resources/`, generated files, temporary files, or editor backup files.
+- Assignment files from more than one day, even when they belong to you.
 
 ## If Your Pull Request Contains Wrong Files
 
