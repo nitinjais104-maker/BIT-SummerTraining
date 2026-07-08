@@ -165,6 +165,8 @@ When asking for help, share the exact command and complete error message. Never 
 
 - Python programming
 - Data analytics
+- Data analytics with Python collections and CSV files
+- NumPy, Pandas, Matplotlib, and Seaborn
 - Data science
 - Machine-learning fundamentals and problem types
 - Linear regression and logistic regression
