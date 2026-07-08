@@ -3,21 +3,21 @@
 num = int(input("Enter a number: "))
 
 if num > 0:
-    print("Positive")
+    print("Positive Number")
 elif num < 0:
-    print("Negative")
+    print("Negative Number")
 else:
     print("Zero")
 
 
 # Question 2: Check whether a number is even or odd
 
-num = int(input("\nEnter another number: "))
+num2 = int(input("\nEnter another number: "))
 
-if num % 2 == 0:
-    print("Even")
+if num2 % 2 == 0:
+    print("Even Number")
 else:
-    print("Odd")
+    print("Odd Number")
 
 
 # Question 3: Create a list of 10 numbers and print each number using a loop
@@ -32,10 +32,11 @@ for number in numbers:
 # Question 4: Function to calculate average of 3 marks
 
 def calculate_average(mark1, mark2, mark3):
-    return (mark1 + mark2 + mark3) / 3
+    average = (mark1 + mark2 + mark3) / 3
+    return average
 
 
-avg = calculate_average(85, 90, 80)
+avg = calculate_average(80, 90, 85)
 print("\nAverage Marks:", avg)
 
 
